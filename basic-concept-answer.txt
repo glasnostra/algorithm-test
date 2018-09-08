@@ -1,0 +1,33 @@
+Basic Concepts answer:
+1. Coding
+a. Berikan contoh code smell (cukup 1) yang biasa terjadi di OOP. Jelaskan mengapa, dan beri contoh bagaimana menghindarinya
+
+Jawab: 
+Contoh code smell pada OOP -> Alternative class with different Interfaces: dimana terdapat dua kelas (class) memiliki fungsi (function) yang melakukan hal yang sama hanya berbeda nama saja. Hal ini mengakibatkan bloating pada kode karena terdapat fungsi yang berulang (meskipun pada dua kelas yang berbeda).
+Hal ini dapat dihindari dengan menggunakan interface yang dapat digunakan oleh kelas-kelas yang membutuhkan fungsi tersebut sehingga tidak terjadi pengulangan kode pada tiap kelas.
+
+
+b. Jelaskan secara singkat konsep Dependency Injection, dan apa alasan perlu digunakan Dependency Injection?
+
+Jawab:
+ Dependensi (dependency) merupakan objek yang dapat digunakan (service), sedangkan injeksi (injection) adalah proses memasukkan (inject) dependensi pada objek dependen (client) yang akan menggunakan service tersebut.
+Dependency Injection adalah konsep yang menitikberatkan pada penulisan kode yg modular dimana ketergantungan antar kelas tidak tinggi, sehingga kita dapat mengubah sebuah kelas tanpa perlu khawatir kelas tersebut membuat break kelas-kelas lain yang bergantung pada kelas yg diubah.
+
+
+2. REST
+Berikan contoh masing masing 1 yang seharusnya dilakukan dan tidak boleh dilakukan ketika menghandle request dengan method:
+i. GET
+ii. POST
+
+Jawab:
+i. GET
+do: mengirimkan data melalui URL, dengan atau tanpa parameter (opsional) untuk membaca data yang telah ada
+don't: mengirimkan data sensitif seperti username, password dll (proses add atau edit atau apa saja yg berkaitan dengan manipulasi data)
+
+ii. POST
+do: mengirimkan data melalui entitas body pada HTTP Request atau form HTML untuk membuat data baru
+don't: request yang butuh cache atau dapat di bookmark (karena POST request tidak pernah tersimpan cache-nya dan tidak dapat di bookmark)
+
+
+
+
